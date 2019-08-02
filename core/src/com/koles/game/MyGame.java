@@ -1,6 +1,7 @@
 package com.koles.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -18,17 +19,24 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.koles.game.view.ButtonsScreen;
 
-public class MyGame extends ApplicationAdapter {
+public class MyGame extends Game {
 	private Stage stage;
 	private Label outputLabel;
+	ButtonsScreen bs;
 
 	@Override
 	public void create () {
-		stage = new Stage(new ScreenViewport());
+		bs = new ButtonsScreen();
+		setScreen(bs);
+	}
+
+
+		/*stage = new Stage(new ScreenViewport());
 		Gdx.input.setInputProcessor(stage);
 
-		int Help_Guides = 12;
+		int Help_Guides = 122;
 		int row_height = Gdx.graphics.getWidth() / 12;
 		int col_width = Gdx.graphics.getWidth() / 12;
 
@@ -126,5 +134,5 @@ public class MyGame extends ApplicationAdapter {
 		stage.act();
 		stage.draw();
 
-	}
+	}*/
 }
